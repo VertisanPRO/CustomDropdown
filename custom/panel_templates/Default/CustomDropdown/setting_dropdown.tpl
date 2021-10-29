@@ -42,7 +42,7 @@
 									</div>
 								</div>
 							</div>
-							{if count($DEFAULT_PAGES)}
+							{if !empty($DEFAULT_PAGES)}
 
 								<label for="type">{$SELECT_PAGE}</label>
 								<form class="form-inline" role="form" action="" method="post">
@@ -66,7 +66,7 @@
 								{$NO_CREATED_PAGES}
 							{/if}
 
-							{if count($IFRAME_PAGES)}
+							{if !empty($IFRAME_PAGES)}
 								<label for="type">{$SELECT_IFRAME_PAGE}</label>
 								<form class="form-inline" role="form" action="" method="post">
 									<div class="form-group">
@@ -89,7 +89,7 @@
 
 							<br>
 
-							{if count($DROPDOWN_PAGES)}
+							{if !empty($DROPDOWN_PAGES)}
 								<div class="table-responsive">
 									<table class="table table-striped">
 										<tbody>
