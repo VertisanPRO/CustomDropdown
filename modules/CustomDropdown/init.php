@@ -3,7 +3,7 @@
 $INFO_MODULE = array(
   'name' => 'CustomDropdown',
   'author' => '<a href="https://tensa.co.ua" target="_blank" rel="nofollow noopener">xGIGABAITx</a>',
-  'module_ver' => '1.2.2',
+  'module_ver' => '1.2.3',
   'nml_ver' => '2.0.0-pr13',
 );
 
