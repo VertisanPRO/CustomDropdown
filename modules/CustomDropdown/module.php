@@ -101,7 +101,7 @@ class CustomDropdown_Module extends Module
 
 
       if ($user->hasPermission('admincp.csdropdown')) {
-        $order = end($navs[2]->returnNav())['order'] + 2.2;
+        $order = end($navs[2]->returnNav())['order'] + 1.1;
         $navs[2]->add('cs_dropdown_divider', mb_strtoupper($cs_dropdown_title, 'UTF-8'), 'divider', 'top', null, $order, '');
         $navs[2]->add('cs_dropdown_items', $cs_dropdown_title, URL::build('/panel/cs-dropdown'), 'top', null, $order + 0.1, $icon);
       }
