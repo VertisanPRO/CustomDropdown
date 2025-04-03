@@ -22,5 +22,19 @@
     "general/page_link": "Page URL",
     "general/page_target": "Open in a new tab?",
     "general/page_icon": "Page icon",
-    "general/page_order": "Page order(numbers only)"
+    "general/page_order": "Page order(numbers only)",
+    "general/group_permission": "Full access to the module",
+    "general/no_dropdown": "No dropdowns created",
+    "general/page_already_exists": "Page already exists",
+    "general/submit": "Submit",
+    "general/yes": "Yes",
+    "general/no": "No",
+    "general/back": "Back",
+    "general/are_you_sure": "Are you sure?",
+    "general/confirm_delete": "Are you sure you want to delete this?",
+    "general/page_link_navbar": "Navbar",
+    "general/page_link_footer": "Footer",
+    "general/invalid_token": "Invalid token",
+    "general/success": "Success",
+    "general/error": "Error"
 }
