@@ -1,5 +1,8 @@
 <?php
-global $template;
+/**
+ * @var TemplateBase $template
+ */
+
 if (Input::exists()) {
     try {
         if (Token::check()) {

@@ -1,5 +1,9 @@
 <?php
-global $template;
+
+/**
+ * @var TemplateBase $template
+ */
+
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     Redirect::to(URL::build('/panel/cs-dropdown'));
 }

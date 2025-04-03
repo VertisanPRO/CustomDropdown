@@ -1,26 +1,30 @@
 <?php
 
-global $user, $pages, $cache, $widgets, $template, $navigation, $cc_nav, $staffcp_nav, $template_file;
+/**
+ * @var Cache $cache
+ * @var Navigation $cc_nav
+ * @var Navigation $navigation
+ * @var Navigation $staffcp_nav
+ * @var Pages $pages
+ * @var TemplateBase $template
+ * @var User $user
+ * @var Widgets $widgets
+ * @var string $template_file
+ */
 
 // Authentication and access rights check
-if ($user->isLoggedIn()) {
-    if (!$user->canViewStaffCP()) {
-        Redirect::to(URL::build('/'));
-    }
-    if (!$user->isAdmLoggedIn()) {
-        Redirect::to(URL::build('/panel/auth'));
-    } elseif (!$user->hasPermission('admincp.csdropdown')) {
-        require_once(ROOT_PATH . '/403.php');
-    }
-} else {
-    Redirect::to(URL::build('/login'));
+if (!$user->handlePanelPageLoad('admincp.csdropdown')) {
+    require_once ROOT_PATH . '/403.php';
+    die();
 }
 
 const PAGE = 'panel';
 const PARENT_PAGE = 'cs_divider';
 const PANEL_PAGE = 'cs_dropdown';
-
 require_once(ROOT_PATH . '/core/templates/backend_init.php');
+
+// Load modules and template
+Module::loadPage($user, $pages, $cache, null, [$navigation, $cc_nav, $staffcp_nav], $widgets, $template);
 
 // Assign template variables
 $template->getEngine()->addVariables([
@@ -70,10 +74,7 @@ if ($action === null) {
     require_once $file;
 }
 
-// Load modules and template
-$navs = [$navigation, $cc_nav, $staffcp_nav];
-Module::loadPage($user, $pages, $cache, null, $navs, $widgets, $template);
-$template->onPageLoad();
+
 
 if (Session::exists('staff_cs_dropdown')) {
     $success = Session::flash('staff_cs_dropdown');
@@ -99,5 +100,6 @@ $template->getEngine()->addVariables([
     'PAGE' => PANEL_PAGE,
 ]);
 
+$template->onPageLoad();
 require(ROOT_PATH . '/core/templates/panel_navbar.php');
 $template->displayTemplate($template_file);
