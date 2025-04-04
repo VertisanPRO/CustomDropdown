@@ -1,5 +1,6 @@
 <?php
 
+require_once(__DIR__ . '/BaseModel.php');
 
 class CustomDropdown extends BaseModel
 {

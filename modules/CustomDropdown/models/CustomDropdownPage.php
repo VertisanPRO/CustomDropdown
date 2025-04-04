@@ -1,5 +1,7 @@
 <?php
 
+require_once(__DIR__ . '/BaseModel.php');
+
 class CustomDropdownPage extends BaseModel {
     // Set the table name
     protected static $table = 'custom_dropdown_pages';

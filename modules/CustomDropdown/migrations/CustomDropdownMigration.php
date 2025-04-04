@@ -1,5 +1,7 @@
 <?php
 
+require_once(__DIR__ . '/BaseMigration.php');
+
 class CustomDropdownMigration extends BaseMigration
 {
     public static function up(): void
