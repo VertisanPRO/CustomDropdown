@@ -1,6 +1,6 @@
 <?php
 
-abstract class BaseModel
+abstract class BaseDropdownModel
 {
     // The table name (should be defined in child classes)
     protected static $table;
